@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link href="src/style.css" rel="stylesheet" />
+
+  </head>
+  <body class="transition duration-500 ease-in-out bg-blue-100">
+    <div class="container p-4 mx-auto">
+      <form id="location-form" class="mb-4">
+        <input
+          type="text"
+          id="location-input"
+          placeholder="Enter location"
+          class="p-2 border border-gray-300 rounded-md"
+        />
+        <button
+          type="submit"
+          id="search-button"
+          class="p-2 text-white bg-blue-500 rounded-md"
+        >
+          Search
+        </button>
+      </form>
+      <div class="weather-container">
+        <p id="temperature" class="text-xl"></p>
+        <p id="description" class="text-lg"></p>
+        <p id="humidity" class="text-lg"></p>
+        <p id="wind-speed" class="text-lg"></p>
+        <button
+          id="toggle-temp"
+          class="p-2 mt-4 text-white bg-green-500 rounded-md"
+        >
+          Toggle Temperature Unit
+        </button>
+      </div>
+    </div>
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
