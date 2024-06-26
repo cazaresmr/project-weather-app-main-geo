@@ -2,7 +2,6 @@ import { apiKey } from "./config.js";
 
 const fetchWeatherData = async (location) => {
   try {
-    // Fetch location data from OpenWeatherMap Geo API
     const geoResponse = await fetch(
       `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`
     );
@@ -11,10 +10,8 @@ const fetchWeatherData = async (location) => {
     }
     const geoData = await geoResponse.json();
 
-    // Extract coordinates from the response
-    const { lat, lon } = geoData[0]; // Assuming the first result is the desired location
+    const { lat, lon } = geoData[0];
 
-    // Fetch weather data using coordinates from OpenWeatherMap Weather API
     const weatherResponse = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
     );
